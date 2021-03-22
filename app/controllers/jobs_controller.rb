@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def show
     @job = Job.find(params[:id])
+     @jobs = Job.paginate(:page => params[:page], :per_page => 5)
 
     if @job.is_hidden
       flash[:warning] = "This Job already archived"
@@ -18,6 +19,7 @@ class JobsController < ApplicationController
             else
               Job.published.recent
             end
+      @jobs = Job.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
