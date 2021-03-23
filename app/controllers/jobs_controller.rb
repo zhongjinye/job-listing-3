@@ -19,7 +19,11 @@ class JobsController < ApplicationController
             else
               Job.published.recent
             end
-      @jobs = Job.paginate(:page => params[:page], :per_page => 5)
+            if params[:search]
+        @jobs = Job.search(params[:search]).recent.paginate(:page => params[:page], :per_page => 5)
+      else
+        @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 5)
+      end
   end
 
   def new

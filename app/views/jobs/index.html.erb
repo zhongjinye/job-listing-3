@@ -3,6 +3,12 @@
 <div class="col-md-12">
 <div class="panel panel-default">
   <div class="panel-heading">
+    <div>
+    	<%= form_tag jobs_path, id: "search-form", :method => "get" do %>
+    	<%= text_field_tag :search, params[:search], class: 'btn btn-default', placeholder: "搜索职位" %>
+    	<%= submit_tag "搜索", class: 'btn btn-default', name: nil %>
+    	<% end %>
+    </div>
 <h1>求职列表
 <div class="dropdown clearfix pull-right"  >
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

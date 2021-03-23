@@ -9,6 +9,15 @@ class Job < ApplicationRecord
     self.save
   end
 
+  def self.search(search)
+    		if search
+      		#where("title LIKE ?", "%#{search}%")
+    			where("title LIKE :search OR description LIKE :search", search: "%#{search}%")
+    		else
+      		all
+      	end
+      end
+
   has_many :resumes
 
   validates :title, presence: true
