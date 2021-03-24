@@ -20,6 +20,10 @@ class Job < ApplicationRecord
 
   has_many :resumes
 
+  def present?
+    is_present
+  end
+
   validates :title, presence: true
   validates :wage_upper_bound, presence: true
   validates :wage_lower_bound, presence: true

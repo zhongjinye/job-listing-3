@@ -1,0 +1,2 @@
+class Guanyu < ApplicationRecord
+end
