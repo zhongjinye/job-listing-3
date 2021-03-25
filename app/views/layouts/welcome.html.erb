@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>全职工作网</title>
+    <title>全职工作网 - 最全面的互联网招聘网站</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="shortcut icon" href="/images/category_05.png">
   </head>
 
   <body>
-
-    <div class="container-fluid">
-        <div class="row">
-          <%= render "common/navbar" %>
-        </div>
-        <%= render "common/flashes" %>
-        <%= yield %>
-    </div>
-
+    <%= render "common/navbar" %>
+    <%= yield %>
     <%= render "common/footer" %>
-
   </body>
 </html>

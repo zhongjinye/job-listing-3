@@ -79,7 +79,8 @@
   .navbar-default {
       background-color: #8D6E63;  //背景颜色
 
-      border-color: #18FFFF; //边框色
+      border-style: none;
+      // border-color: #18FFFF; //边框色
 
   }
 
@@ -747,3 +748,376 @@
   .talk-about-us .carousel-indicators {
       bottom: -70px;
   }
+
+  /*===== Support ====*/
+
+  .goTop {
+      height: 35px;
+      width: 35px;
+      background-color: #fff;
+      border-radius: 5px;
+      position: fixed;
+      top: 90%;
+      right: 3%;
+      display: none;
+
+      box-shadow: 1px 1px 3px #666;
+  }
+  .goTop span {
+      color: #000;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+
+      font-size: 20px;
+  }
+
+  .goTop:hover {
+      background-color: #4A6BB5;
+
+      span{
+        color: #fff;
+      }
+  }
+
+  /*===== Support ====*/
+
+  /*===== our client ====*/
+  .support{
+      text-align: center;
+      height: 200px;
+      background: image_url("start.jpg") no-repeat scroll top center/ cover;
+
+      div{
+        margin-top: 15px;
+      }
+  }
+
+  /*===== user ====*/
+  .user_setup{
+      height: 750px;
+      background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+  }
+
+  .user_setup_content{
+      background: #fff;
+      margin-top: 135px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      box-shadow: 1px 3px 5px #333;
+      border: 5px solid #666;
+      border-radius: 25px;
+
+      opacity:0.95;
+      filter:alpha(opacity=95);
+
+      h2{
+        text-align: center;
+      }
+
+      .psw{
+        float: right;
+        margin-top: -33px;
+        position: relative;
+      }
+
+      .account{
+        text-align: center;
+      }
+
+      .form-inputs{
+        margin-top: 25px;
+      }
+
+      .form-actions{
+        text-align: center;
+        margin-top: 35px;
+        margin-bottom: 25px;
+
+        .button{
+          color: #fff;
+          background-color: #4A6BB5;
+          border-color: #4A6BB5;
+          font-size: 16px;
+          letter-spacing: 1px;
+          width: 100%;
+        }
+        .button:hover{
+            background-color: #4A99B5;
+            border-color: #4A99B5;
+            color: #fff;
+        }
+      }
+  }
+
+  /* media quaries */
+  @media screen and (max-width: 768px){
+      .default-menu.navbar-default .navbar-nav > li > a{
+          line-height: 12px;
+      }
+
+      .default-menu .navbar-nav > li .nav-search{
+          border-color: rgba(153, 153, 153, 0.1);
+      }
+
+      .nav-search .form-control{
+          text-align: center;
+          width: 100%;
+          padding-left: 40px;
+          padding-right: 20px;
+      }
+
+      .nav-search .form-group i {
+          color: #999;
+          font-size: 12px;
+          left: 20px;
+      }
+
+      .default-menu.navbar-default .navbar-nav > li:last-child > a{
+          padding-left: 20px !important;
+      }
+
+      .default-menu.navbar-default .navbar-nav > li:first-child > a{
+          padding-left: 20px !important;
+      }
+  }
+
+  .default-menu.menu-4{
+      border-bottom: 0;
+  }
+
+  .default-menu.menu-4 .default-logo{
+      color: #fff;
+  }
+
+  .default-menu.menu-4 .navbar-nav > li > a{
+      color: #fff;
+  }
+
+  .default-menu.menu-4 .navbar-nav > li > a:before,
+  .default-menu.menu-4 .navbar-nav > li > a:after{
+      color: transparent;
+      font-size: 13px;
+      position: absolute;
+      transition: all 0.5s ease-in-out;
+      margin-top: -1px;
+  }
+
+
+
+  .default-menu.menu-4 .dropdown-menu{
+      margin-top: 0 !important;
+  }
+
+  @media screen and (max-width: 768px){
+      .default-menu.menu-4 .navbar-nav > li > a:hover:after,
+      .default-menu.menu-4 .navbar-nav > li > a:hover:before{
+          color: transparent;
+      }
+  }
+
+  /* 搜寻栏 */
+  .search-box{
+    margin-top: 10px;
+
+    input{
+      min-width: 225px !important;
+    }
+  }
+
+  .search-error{
+    text-align: center;
+    min-height: 325px;
+    margin-top: 250px;
+    margin-bottom: 50px;
+  }
+
+
+
+  .no-job-data{
+    margin-top: 120px;
+    color: #555;
+    font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+    text-align: center;
+  }
+
+  /*===== Start Job#Admin ====*/
+  .admin-job-box{
+    margin-top: 5px;
+    min-height: 425px;
+
+    table{
+      box-shadow: 0 0 3px #999;
+    }
+
+    thead{
+      background-color: #eee;
+      font-size: 16px;
+    }
+
+    .hidden-box{
+      background-color: #eee;
+    }
+
+    .job-list{
+      margin-top: 15px;
+    }
+
+    .title{
+      font-size: 15px;
+    }
+
+    .count{
+      font-weight: 500;
+      color: #4A6BB5;
+
+      span{
+        font-family: sans-serif;
+        font-size: 18px;
+      }
+    }
+
+    .wage{
+      color: #FF7D0A;
+      font-weight: 600;
+    }
+
+    .resume{
+      background: #333;
+      width: 25px;
+    }
+
+    .action-box{
+      margin-top: -2.5px;
+      margin-bottom: -2.5px;
+    }
+
+    .show-btn{
+      background-color: #B6C9F2;
+      border: 1px solid #aaa;
+    }
+
+    .show-btn:hover{
+      opacity: 0.65;
+    }
+
+    .no-data{
+      margin-top: 150px;
+      margin-bottom: -125px;
+      text-align: center;
+      color: #555;
+    }
+  }
+
+  .job-form{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    min-height: 550px;
+    h2{
+      color: #555;
+      text-align: center;
+    }
+  }
+
+  .resume-form{
+    min-height: 400px;
+  }
+
+  .job-setup{
+    background: #fafafa;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 1px 3px 5px #333;
+    border: 5px solid #666;
+    border-radius: 25px;
+
+    opacity:0.95;
+    filter:alpha(opacity=95);
+    hr {
+      height:1px;
+      background-color:#ccc;
+    }
+  }
+
+  .job-form-content{
+    h2{
+      text-align: center;
+      color: #3D537F;
+      letter-spacing: 1px;
+    }
+
+    .job-content-info{
+      height: 225px;
+    }
+
+    .category{
+      width: 75%;
+    }
+
+    .location{
+      width: 75%;
+    }
+
+    .wage{
+      width: 50px;
+      border-radius: 5px;
+    }
+
+    .wage-form{
+      font-weight: 600;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .hidden-box{
+      font-size: 16px;
+    }
+
+
+    .form-actions{
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 25px;
+
+      .button{
+        color: #fff;
+        background-color: #4A6BB5;
+        border-color: #4A6BB5;
+        font-size: 16px;
+        letter-spacing: 1px;
+        width: 100%;
+      }
+      .button:hover{
+          background-color: #4A99B5;
+          border-color: #4A99B5;
+          color: #fff;
+      }
+    }
+
+
+  }
+
+
+  .action-btn{
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+
+  .admin-select-job-box{
+    margin-top: 15px;
+
+    button{
+      width: 100px;
+    }
+
+    .btn-select{
+      background-color: #B6C9F2;
+      color: #fff;
+    }
+  }
+  /*===== End Job#admin ====*/

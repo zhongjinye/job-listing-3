@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210323072519) do
+ActiveRecord::Schema.define(version: 20210324093131) do
 
   create_table "guanyus", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20210323072519) do
     t.boolean  "is_hidden",        default: true
     t.text     "requirement"
     t.boolean  "is_present",       default: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "name"
+    t.integer  "sort"
+    t.boolean  "is_hidden",  default: false
   end
 
   create_table "resumes", force: :cascade do |t|

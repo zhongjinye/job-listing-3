@@ -62,30 +62,33 @@ class JobsController < ApplicationController
   end
 
   def search
-  if @query_string.present?
-    search_result = Job.ransack(@search_criteria).result(:distinct => true)
-    @jobs = search_result.paginate(:page => params[:page], :per_page => 20)
-  else
-    redirect_to jobs_path
+    if @query_string.present?
+      # 显示符合关键字的公开职位 #
+      search_result = Job.joins(:location).ransack(@search_criteria).result(:distinct => true)
+      @jobs = search_result.published.paginate(:page => params[:page], :per_page => 10 )
+      # 随机推荐五个职位 #
+      @suggests = Job.published.random5
+    end
   end
-end
 
   protected
 
   def validate_search_key
-  @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
-  @search_criteria = search_criteria(@query_string)
+    # 去除特殊字符 #
+    @query_string = params[:keyword].gsub(/\\|\'|\/|\?/, "") if params[:keyword].present?
+    @search_criteria = search_criteria(@query_string)
+
   end
 
-
   def search_criteria(query_string)
-  { :title_cont => query_string }
+    # 筛选多个栏位 #
+    { :name_or_company_or_location_name_cont => query_string }
   end
 
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :requirement)
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :requirement, :search)
   end
 end
