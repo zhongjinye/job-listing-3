@@ -1,0 +1,2 @@
+module Admin::JobRegistrationsHelper
+end
