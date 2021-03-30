@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'c5c6cc36b9b2b067ba904a658e35bd4758de696471f0d4ce7a0d475d8234c0ed53bf3ee87bd6cf0a657178d9adee4a7697f6bbb8ef7372ab707af5e5e6153c76'
+  # config.secret_key = 'e9cf8fc284738c042569a26630310d3228fc9790a691d8319550d0367c5af2e80e094214e7d8c74f2a90a55a0e04f5f07d7ae1e19cebe56002509d50e2b16084'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -68,7 +68,7 @@ Devise.setup do |config|
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
   # given strategies, for example, `config.params_authenticatable = [:database]` will
-  # enable it only for database (email   password) authentication.
+  # enable it only for database (email + password) authentication.
   # config.params_authenticatable = true
 
   # Tell if authentication through HTTP Auth is enabled. False by default.
@@ -78,7 +78,7 @@ Devise.setup do |config|
   # For API-only applications to support authentication "out-of-the-box", you will likely want to
   # enable this with :database unless you are using a custom strategy.
   # The supported strategies are:
-  # :database      = Support basic authentication with authentication key   password
+  # :database      = Support basic authentication with authentication key + password
   # config.http_authenticatable = false
 
   # If 401 status code should be returned for AJAX requests. True by default.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '6413f3347fe532e49653e18457a47381f4fa199d3fd2358710a3d052218ef4efd5df3a43d95d80e34a68e9f28ed3478f31ee0ccb3923142040a410a42a908ab1'
+  # config.pepper = '4b6ccd5b23deffda509cca72f19ac003c90cab306ff9fb6e04c342ed9b4b1ecf24a20fa9544316f6a2aaf35e617ddaad865f0afd5b850fdd619c9dc2f78223e6'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -183,7 +183,7 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s] @[^@\s] \z/
+  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this

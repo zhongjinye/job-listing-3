@@ -7,12 +7,12 @@ class User < ApplicationRecord
   # has_many :jobs
   has_many :resumes
 
-  def admin?
-    is_admin
-  end
-
-  def website_admin?
-    is_website_admin
-  end
+  # def admin?
+  #   is_admin
+  # end
+  #
+  # def website_admin?
+  #   is_website_admin
+  # end
 
 end
