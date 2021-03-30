@@ -1,0 +1,40 @@
+<% if @resumes.length > 0 %>
+  <div class="col-md-10 col-md-offset-1 page-title">
+    <h1><span class="fa fa-envelope-o"></span> 投递过的职位</h1>
+  </div>
+  <div class="col-md-10 col-md-offset-1 job-content">
+    <div class="main-box">
+    <% @resumes.each do |resume| %>
+    <div class="col-md-9 col-xs-12 job-box">
+      <!--=== 职位信息 ===-->
+      <div class="col-md-6 col-xs-12 info">
+        <div class="info-top">
+          <h3><%= link_to(resume.job.name, job_path(resume.job), target: "_blank" )%></h3>
+          <% if resume.job.is_hidden %>
+            <span>（职位已下线）</span>
+          <% else %>
+            <span><%= resume.job.created_at.strftime("%Y-%m-%d") %></span>
+          <% end %>
+        </div>
+        <div class="info-mid">
+          <span><%= resume.job.wage_lower_bound %></span>
+        </div>
+        <div class="info-bot">
+          <span><%= resume.job.wage_upper_bound %></span>
+        </div>
+    </div>
+    </div>
+  </div>
+
+      <!--=== 公司信息 ===-->
+      <div class="col-md-6 col-xs-12 company">
+        <div class="company-top">
+          <span><%= resume.job.wage_lower_bound %></span>
+        </div>
+        <div class="company-mid">
+          <span class="fa fa-envelope"></span><span><%= resume.job.contact_mail %></span>
+        </div>
+        <div class="company-bot">
+          <span><%= resume.job.wage_lower_bound %></span>
+        </div>
+      </div>

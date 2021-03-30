@@ -1,0 +1,22 @@
+<h1><%= @job.name %> / Registrations</h1>
+
+<p class="text-right">
+<%= link_to "New Registration", new_admin_job_registration_path(@job), :class => "btn btn-primary" %>
+</p>
+
+<table class="table">
+<tr>
+  <th>title</th>
+  <th>description</th>
+</tr>
+<% @registrations.each do |registration| %>
+  <tr>
+    <td><%= registration.title %></td>
+    <td><%= registration.description %></td>
+
+    <td>
+      <%= link_to "Edit", edit_admin_job_registration_path(@job, registration), :class => "btn btn-default" %>
+      <%= link_to "Delete", admin_job_registration_path(@job, registration), :method => "delete", :data => { :confirm => "Are you sure?" }, :class => "btn btn-danger" %>
+  </tr>
+<% end %>
+</table>

@@ -12,18 +12,18 @@ class JobsController < ApplicationController
 
   def index
     @jobs = case params[:order]
-            when 'by_lower_bound'
-              Job.published.order('wage_lower_bound DESC')
-            when 'by_upper_bound'
-              Job.published.order('wage_upper_bound DESC')
-            else
-              Job.published.recent
-            end
-            if params[:search]
-        @jobs = Job.search(params[:search]).recent.paginate(:page => params[:page], :per_page => 5)
-      else
-        @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 5)
-      end
+    when 'by_lower_bound'
+      Job.published.order('wage_lower_bound DESC')
+    when 'by_upper_bound'
+      Job.published.order('wage_upper_bound DESC')
+    else
+      Job.published.recent
+    end
+    if params[:search]
+          @jobs = Job.search(params[:search]).recent.paginate(:page => params[:page], :per_page => 5)
+        else
+          @jobs = Job.all.recent.paginate(:page => params[:page], :per_page => 5)
+        end
   end
 
   def new
@@ -61,29 +61,6 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
-  def search
-    if @query_string.present?
-      # 显示符合关键字的公开职位 #
-      search_result = Job.joins(:location).ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.published.paginate(:page => params[:page], :per_page => 10 )
-      # 随机推荐五个职位 #
-      @suggests = Job.published.random5
-    end
-  end
-
-  protected
-
-  def validate_search_key
-    # 去除特殊字符 #
-    @query_string = params[:keyword].gsub(/\\|\'|\/|\?/, "") if params[:keyword].present?
-    @search_criteria = search_criteria(@query_string)
-
-  end
-
-  def search_criteria(query_string)
-    # 筛选多个栏位 #
-    { :name_or_company_or_location_name_cont => query_string }
-  end
 
 
   private

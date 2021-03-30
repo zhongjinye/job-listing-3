@@ -9,12 +9,21 @@ class Job < ApplicationRecord
     self.save
   end
 
-  belongs_to :location
+  # belongs_to :user
   has_many :resumes
 
   def present?
     is_present
   end
+
+  def self.search(search)
+                  if search
+                  #where("title LIKE ?", "%#{search}%")
+                          where("title LIKE :search OR description LIKE :search", search: "%#{search}%")
+                  else
+                  all
+          end
+      end
 
   validates :title, presence: true
   validates :wage_upper_bound, presence: true
