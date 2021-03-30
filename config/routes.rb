@@ -39,6 +39,8 @@ Rails.application.routes.draw do
   end
   resources :guanyus
   resources :jobs
-  resources :registrations, :controller => "job_registrations"
+
+  # resources :registrations, :controller => "job_registrations"
+
   root 'welcome#index'
 end
