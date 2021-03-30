@@ -1,4 +1,4 @@
-   class Admin::jobRegistrationsController < AdminController
+   class Admin::JobRegistrationsController < AdminController
 
    before_action :find_job
 
